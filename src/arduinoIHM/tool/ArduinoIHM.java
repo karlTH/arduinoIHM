@@ -26,7 +26,7 @@ public class ArduinoIHM  implements Tool{
 			
 			String dir = getClass().getClassLoader().getResource(".").getFile();
 			
-			Process ps = rt.exec(dir + "..\\tools\\ArduinoIHM\\tool\\Arduino IHM\\Arduino IHM.exe", null, new File(dir + "..\\tools\\ArduinoIHM\\tool\\Arduino IHM"));
+			Process ps = rt.exec(dir.replaceAll("%20", " ") + "..\\tools\\ArduinoIHM\\tool\\Arduino IHM\\Arduino IHM.exe", null, new File(dir.replaceAll("%20", " ") + "..\\tools\\ArduinoIHM\\tool\\Arduino IHM"));
 			  ps.waitFor();
 		      
 		} catch (IOException e) {
